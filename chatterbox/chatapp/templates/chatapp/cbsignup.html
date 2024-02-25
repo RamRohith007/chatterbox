@@ -1,0 +1,38 @@
+{% extends "chatapp/base.html" %}
+
+{% block content %}
+<div class='p-6 lg:p-15 text-center'>
+    <h2 class="text-2xl lg:text-5xl text-white">Welcome to ChatterBox</h2>
+</div>
+<form method="POST" action="." class="lg:w-2/5 px-4 mx-auto">{% csrf_token %}
+    <div class="md-5">
+        <label class="text-white">Username</label>
+        <input type="text" name="username" class="text-gray-950 w-full mt-2 px-4 py-2 rounded-lg">
+    </div>
+    <br>
+    <div class="md-5">
+        <label class="text-white">Password</label>
+        <input type="password" name="password1" class="text-gray-950 w-full mt-2 px-4 py-2 rounded-lg">
+    </div>
+    <br>
+    <div class="md-5">
+        <label class="text-white">Confirm Password</label>
+        <input type="password" name="password2" class="text-gray-950 w-full mt-2 px-4 py-2 rounded-lg">
+    </div>
+    {% if signupform.errors %}
+        {% for field in loginform %}
+            {% for error in field.errors %}
+                <div class="mb-5 p-4 rounded-xl bg-red-300 text-white">
+                    <p>{{ error|escape }}</p>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+    <br><br>
+    <div class="md-5 text-center">
+        <button class="bg-gray-950 text-white hover:bg-blue-600 hover:text-gray-950 font-bold py-2 px-4 rounded-full w-3/5">
+            Signup &nbsp;<i class="fa fa-user"></i>
+        </button>
+    </div>
+</form>
+{% endblock content %}

@@ -1,0 +1,7 @@
+Chatterbox - v1
+
+•	Chatterbox is a real-time chat app that allows users to chat with other registered users in different chatbox spaces. 
+•	Each chatbox space has a unique name.
+•	UI of the application is built with Tailwind CSS.
+•	Chatterbox uses Django Channels and WebSockets to enable real-time functionality and communication.
+•	Chatterbox is a great example of how to use Django, Tailwind CSS, and Channels to create a dynamic and interactive web application. 🚀
